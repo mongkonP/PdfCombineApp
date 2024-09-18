@@ -1,6 +1,6 @@
 ﻿namespace PdfCombineApp
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             panel1 = new Panel();
+            myProgressBar1 = new TORServices.Forms.MyProgressBar();
             ButtonCombineFiles = new Button();
             ButtonMoveDown = new Button();
             ButtonMoveUp = new Button();
             ButtonSelectFiles = new Button();
             listBoxFiles = new ListBox();
-            myProgressBar1 = new TORServices.Forms.MyProgressBar();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,6 +51,14 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(895, 115);
             panel1.TabIndex = 0;
+            // 
+            // myProgressBar1
+            // 
+            myProgressBar1.Dock = DockStyle.Bottom;
+            myProgressBar1.Location = new Point(0, 78);
+            myProgressBar1.Name = "myProgressBar1";
+            myProgressBar1.Size = new Size(895, 37);
+            myProgressBar1.TabIndex = 4;
             // 
             // ButtonCombineFiles
             // 
@@ -103,15 +112,7 @@
             listBoxFiles.Size = new Size(895, 487);
             listBoxFiles.TabIndex = 1;
             // 
-            // myProgressBar1
-            // 
-            myProgressBar1.Dock = DockStyle.Bottom;
-            myProgressBar1.Location = new Point(0, 78);
-            myProgressBar1.Name = "myProgressBar1";
-            myProgressBar1.Size = new Size(895, 37);
-            myProgressBar1.TabIndex = 4;
-            // 
-            // Form1
+            // frmMain
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -119,9 +120,10 @@
             Controls.Add(listBoxFiles);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(5, 6, 5, 6);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "frmMain";
+            StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
