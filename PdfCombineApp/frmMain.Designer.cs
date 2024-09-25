@@ -3,12 +3,12 @@
     partial class frmMain
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,119 +23,74 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            panel1 = new Panel();
-            myProgressBar1 = new TORServices.Forms.MyProgressBar();
-            ButtonCombineFiles = new Button();
-            ButtonMoveDown = new Button();
-            ButtonMoveUp = new Button();
-            ButtonSelectFiles = new Button();
-            listBoxFiles = new ListBox();
-            panel1.SuspendLayout();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            cmdCombine = new Button();
+            cmdConvert = new Button();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // flowLayoutPanel1
             // 
-            panel1.Controls.Add(myProgressBar1);
-            panel1.Controls.Add(ButtonCombineFiles);
-            panel1.Controls.Add(ButtonMoveDown);
-            panel1.Controls.Add(ButtonMoveUp);
-            panel1.Controls.Add(ButtonSelectFiles);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(895, 115);
-            panel1.TabIndex = 0;
+            flowLayoutPanel1.BackColor = Color.FromArgb(0, 64, 64);
+            flowLayoutPanel1.Controls.Add(cmdCombine);
+            flowLayoutPanel1.Controls.Add(cmdConvert);
+            flowLayoutPanel1.Dock = DockStyle.Top;
+            flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1094, 103);
+            flowLayoutPanel1.TabIndex = 0;
             // 
-            // myProgressBar1
+            // cmdCombine
             // 
-            myProgressBar1.Dock = DockStyle.Bottom;
-            myProgressBar1.Location = new Point(0, 78);
-            myProgressBar1.Name = "myProgressBar1";
-            myProgressBar1.Size = new Size(895, 37);
-            myProgressBar1.TabIndex = 4;
+            cmdCombine.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmdCombine.Image = Properties.Resources.pdf_icon;
+            cmdCombine.ImageAlign = ContentAlignment.TopCenter;
+            cmdCombine.Location = new Point(3, 3);
+            cmdCombine.Name = "cmdCombine";
+            cmdCombine.Size = new Size(166, 93);
+            cmdCombine.TabIndex = 0;
+            cmdCombine.Text = "Combine PDF";
+            cmdCombine.TextAlign = ContentAlignment.BottomCenter;
+            cmdCombine.UseVisualStyleBackColor = true;
+            cmdCombine.Click += cmdCombine_Click;
             // 
-            // ButtonCombineFiles
+            // cmdConvert
             // 
-            ButtonCombineFiles.Location = new Point(445, 12);
-            ButtonCombineFiles.Name = "ButtonCombineFiles";
-            ButtonCombineFiles.Size = new Size(206, 50);
-            ButtonCombineFiles.TabIndex = 3;
-            ButtonCombineFiles.Text = "Combine Files";
-            ButtonCombineFiles.UseVisualStyleBackColor = true;
-            ButtonCombineFiles.Click += ButtonCombineFiles_Click;
-            // 
-            // ButtonMoveDown
-            // 
-            ButtonMoveDown.BackgroundImage = Properties.Resources.Down_move01;
-            ButtonMoveDown.BackgroundImageLayout = ImageLayout.Center;
-            ButtonMoveDown.Location = new Point(349, 12);
-            ButtonMoveDown.Name = "ButtonMoveDown";
-            ButtonMoveDown.Size = new Size(75, 50);
-            ButtonMoveDown.TabIndex = 2;
-            ButtonMoveDown.UseVisualStyleBackColor = true;
-            ButtonMoveDown.Click += ButtonMoveDown_Click;
-            // 
-            // ButtonMoveUp
-            // 
-            ButtonMoveUp.BackgroundImage = Properties.Resources.Up_move01;
-            ButtonMoveUp.BackgroundImageLayout = ImageLayout.Center;
-            ButtonMoveUp.Location = new Point(254, 12);
-            ButtonMoveUp.Name = "ButtonMoveUp";
-            ButtonMoveUp.Size = new Size(75, 50);
-            ButtonMoveUp.TabIndex = 1;
-            ButtonMoveUp.UseVisualStyleBackColor = true;
-            ButtonMoveUp.Click += ButtonMoveUp_Click;
-            // 
-            // ButtonSelectFiles
-            // 
-            ButtonSelectFiles.Location = new Point(12, 12);
-            ButtonSelectFiles.Name = "ButtonSelectFiles";
-            ButtonSelectFiles.Size = new Size(223, 50);
-            ButtonSelectFiles.TabIndex = 0;
-            ButtonSelectFiles.Text = "Select  Files";
-            ButtonSelectFiles.UseVisualStyleBackColor = true;
-            ButtonSelectFiles.Click += ButtonSelectFiles_Click;
-            // 
-            // listBoxFiles
-            // 
-            listBoxFiles.Dock = DockStyle.Fill;
-            listBoxFiles.FormattingEnabled = true;
-            listBoxFiles.ItemHeight = 30;
-            listBoxFiles.Location = new Point(0, 115);
-            listBoxFiles.Name = "listBoxFiles";
-            listBoxFiles.Size = new Size(895, 487);
-            listBoxFiles.TabIndex = 1;
+            cmdConvert.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmdConvert.Image = Properties.Resources.analytics_docs_documents_graph_pdf_icon;
+            cmdConvert.ImageAlign = ContentAlignment.TopCenter;
+            cmdConvert.Location = new Point(175, 3);
+            cmdConvert.Name = "cmdConvert";
+            cmdConvert.Size = new Size(166, 93);
+            cmdConvert.TabIndex = 1;
+            cmdConvert.Text = "Combine PDF";
+            cmdConvert.TextAlign = ContentAlignment.BottomCenter;
+            cmdConvert.UseVisualStyleBackColor = true;
+            cmdConvert.Click += cmdConvert_Click;
             // 
             // frmMain
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(895, 602);
-            Controls.Add(listBoxFiles);
-            Controls.Add(panel1);
-            Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(5, 6, 5, 6);
+            ClientSize = new Size(1094, 649);
+            Controls.Add(flowLayoutPanel1);
+            IsMdiContainer = true;
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
-            panel1.ResumeLayout(false);
+            Text = "frmMain";
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Button ButtonCombineFiles;
-        private Button ButtonMoveDown;
-        private Button ButtonMoveUp;
-        private Button ButtonSelectFiles;
-        private ListBox listBoxFiles;
-        private TORServices.Forms.MyProgressBar myProgressBar1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button cmdCombine;
+        private Button cmdConvert;
     }
 }

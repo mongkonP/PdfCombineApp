@@ -63,6 +63,16 @@ namespace PdfCombineApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap analytics_docs_documents_graph_pdf_icon {
+            get {
+                object obj = ResourceManager.GetObject("analytics_docs_documents_graph_pdf_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Down_move01 {
             get {
                 object obj = ResourceManager.GetObject("Down_move01", resourceCulture);
@@ -76,6 +86,16 @@ namespace PdfCombineApp.Properties {
         internal static System.Drawing.Bitmap Down_move02 {
             get {
                 object obj = ResourceManager.GetObject("Down_move02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pdf_icon {
+            get {
+                object obj = ResourceManager.GetObject("pdf_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

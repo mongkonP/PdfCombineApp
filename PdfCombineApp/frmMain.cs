@@ -1,5 +1,12 @@
-using PdfSharpCore.Pdf.IO;
-using PdfSharpCore.Pdf;
+Ôªøusing System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PdfCombineApp
 {
@@ -9,124 +16,19 @@ namespace PdfCombineApp
         {
             InitializeComponent();
         }
-        // ‡°Á∫‰ø≈Ï∑’Ë‡≈◊Õ°‰«È„π List
-        private List<string> selectedFiles = new List<string>();
-        // ø—ß°Ï™—π ”À√—∫ªÿË¡‡≈◊Õ°‰ø≈Ï
-        private void ButtonSelectFiles_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog
+        void ShowFofm(Form f) {
+            // ‡∏•‡∏ö‡∏ü‡∏≠‡∏£‡πå‡∏°‡∏•‡∏π‡∏Å‡∏≠‡∏∑‡πà‡∏ô‡πÜ ‡∏ó‡∏±‡πâ‡∏á‡∏´‡∏°‡∏î
+            foreach (Form form in this.MdiChildren)
             {
-                Multiselect = true,
-                Filter = "PDF Files (*.pdf)|*.pdf",
-                Title = "Select PDF files"
-            };
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                selectedFiles.AddRange(openFileDialog.FileNames);
-                UpdateFileList();
-            }
-        }
-
-        // Õ—ª‡¥µ√“¬°“√‰ø≈Ï„π ListBox
-        private void UpdateFileList()
-        {
-            listBoxFiles.Items.Clear();
-            foreach (string file in selectedFiles)
-            {
-                listBoxFiles.Items.Add(file);
-            }
-        }
-
-        // ø—ß°Ï™—π ”À√—∫ªÿË¡√«¡‰ø≈Ï
-        private async void ButtonCombineFiles_Click(object sender, EventArgs e)
-        {
-            if (selectedFiles.Count == 0)
-            {
-                MessageBox.Show("Please select files to combine.");
-                return;
+                form.Close();
             }
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog
-            {
-                Filter = "PDF Files (*.pdf)|*.pdf",
-                Title = "Save combined PDF"
-            };
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                // ª‘¥°“√„™Èß“πªÿË¡¢≥–√«¡‰ø≈Ï
-                ButtonCombineFiles.Enabled = false;
-                ButtonSelectFiles.Enabled = false;
-                ButtonMoveUp.Enabled = false;
-                ButtonMoveDown.Enabled = false;
-
-                // µ—Èß§Ë“ ProgressBar
-                myProgressBar1.SetMinMax(0,selectedFiles.Count);
-              
-
-                // ‡√’¬° CombinePDFs ¥È«¬ async
-                await CombinePDFs(saveFileDialog.FileName);
-
-                // ‡ª‘¥„™Èß“πªÿË¡‡¡◊ËÕ√«¡‡ √Á®
-                ButtonCombineFiles.Enabled = true;
-                ButtonSelectFiles.Enabled = true;
-                ButtonMoveUp.Enabled = true;
-                ButtonMoveDown.Enabled = true;
-
-                MessageBox.Show("PDFs combined successfully.");
-            }
+            // ‡πÄ‡∏û‡∏¥‡πà‡∏°‡∏ü‡∏≠‡∏£‡πå‡∏°‡πÉ‡∏´‡∏°‡πà
+            f.MdiParent = this;
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
         }
-        // ø—ß°Ï™—π CombinePDFs ∑”ß“π·∫∫ async
-        private async Task CombinePDFs(string outputFilePath)
-        {
-            await Task.Run(() =>
-            {
-                using (PdfDocument outputDocument = new PdfDocument())
-                {
-                    foreach (string file in selectedFiles)
-                    {
-                        using (PdfDocument inputDocument = PdfReader.Open(file, PdfDocumentOpenMode.Import))
-                        {
-                            foreach (PdfPage page in inputDocument.Pages)
-                            {
-                                outputDocument.AddPage(page);
-                            }
-                        }
-                        myProgressBar1.AddValue();
-                    }
-                    outputDocument.Save(outputFilePath);
-                }
-            });
-        }
-
-
-        // ø—ß°Ï™—π‡≈◊ËÕπ‰ø≈Ï¢÷Èπ
-        private void ButtonMoveUp_Click(object sender, EventArgs e)
-        {
-            int selectedIndex = listBoxFiles.SelectedIndex;
-            if (selectedIndex > 0)
-            {
-                string file = selectedFiles[selectedIndex];
-                selectedFiles.RemoveAt(selectedIndex);
-                selectedFiles.Insert(selectedIndex - 1, file);
-                UpdateFileList();
-                listBoxFiles.SelectedIndex = selectedIndex - 1;
-            }
-        }
-
-        // ø—ß°Ï™—π‡≈◊ËÕπ‰ø≈Ï≈ß
-        private void ButtonMoveDown_Click(object sender, EventArgs e)
-        {
-            int selectedIndex = listBoxFiles.SelectedIndex;
-            if (selectedIndex < selectedFiles.Count - 1 && selectedIndex >= 0)
-            {
-                string file = selectedFiles[selectedIndex];
-                selectedFiles.RemoveAt(selectedIndex);
-                selectedFiles.Insert(selectedIndex + 1, file);
-                UpdateFileList();
-                listBoxFiles.SelectedIndex = selectedIndex + 1;
-            }
-        }
+        private void cmdCombine_Click(object sender, EventArgs e)=> ShowFofm( new frmCombine());
+        private void cmdConvert_Click(object sender, EventArgs e)=>  ShowFofm(new  frmConvert2PDF());
     }
 }
