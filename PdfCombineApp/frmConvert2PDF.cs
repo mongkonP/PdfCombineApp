@@ -29,7 +29,7 @@ namespace PdfCombineApp
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 Files.AddRange(openFileDialog.FileNames);
-                clsExt.UpdateFileList(this.listBoxFiles, Files); ;
+                clsExt.UpdateFileList(this.listBoxFiles, Files); 
             }
         }
 
@@ -80,7 +80,8 @@ namespace PdfCombineApp
             ButtonSelectFiles.Enabled = false;
             ButtonMoveUp.Enabled = false;
             ButtonMoveDown.Enabled = false;
-
+            // ตั้งค่า ProgressBar
+            myProgressBar1.SetMinMax(0, Files.Count);
             foreach (string file in Files)
             {
                 string outputFilePath = System.IO.Path.ChangeExtension(file, ".pdf");

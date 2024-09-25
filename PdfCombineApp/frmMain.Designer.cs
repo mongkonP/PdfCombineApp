@@ -68,7 +68,7 @@
             cmdConvert.Name = "cmdConvert";
             cmdConvert.Size = new Size(166, 93);
             cmdConvert.TabIndex = 1;
-            cmdConvert.Text = "Combine PDF";
+            cmdConvert.Text = "Convert 2 PDF";
             cmdConvert.TextAlign = ContentAlignment.BottomCenter;
             cmdConvert.UseVisualStyleBackColor = true;
             cmdConvert.Click += cmdConvert_Click;
