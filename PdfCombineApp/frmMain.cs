@@ -16,7 +16,7 @@ namespace PdfCombineApp
         {
             InitializeComponent();
         }
-        void ShowFofm(Form f) {
+        void ShowForm(Form f) {
             // ลบฟอร์มลูกอื่นๆ ทั้งหมด
             foreach (Form form in this.MdiChildren)
             {
@@ -28,7 +28,7 @@ namespace PdfCombineApp
             f.WindowState = FormWindowState.Maximized;
             f.Show();
         }
-        private void cmdCombine_Click(object sender, EventArgs e)=> ShowFofm( new frmCombine());
-        private void cmdConvert_Click(object sender, EventArgs e)=>  ShowFofm(new  frmConvert2PDF());
+        private void cmdCombine_Click(object sender, EventArgs e)=> ShowForm( new frmCombine());
+        private void cmdConvert_Click(object sender, EventArgs e)=>  ShowForm(new  frmConvert2PDF());
     }
 }
